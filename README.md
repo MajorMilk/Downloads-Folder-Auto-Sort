@@ -31,7 +31,7 @@ to add a new category of things would be more involved but could be done through
 
 2:Create a private string for that type of file (private string exampleDestinaion)
 
-3:Add a foreach loop int the UpdateDictionary() function. It should be linked with the ascociated destination.
+3:Add a foreach loop in the UpdateDictionary() function. It should be linked with the ascociated destination.
 
 Thats it
 
