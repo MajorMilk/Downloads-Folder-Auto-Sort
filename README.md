@@ -39,4 +39,5 @@ Thats it
 The default destinations are:
 
 the Music, Videos, Pictures, Documents folders
+
 and folders inside the the downloads folder called Compressed, Executables, and 3dModels
