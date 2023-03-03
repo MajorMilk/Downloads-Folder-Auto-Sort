@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Security.AccessControl;
 using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DownloadsFileManager
@@ -31,9 +25,6 @@ namespace DownloadsFileManager
 
         private string[] modelExtensions = { ".stl", ".obj", ".fbx", ".3ds", ".ply", ".dae", ".glb", ".gltf", ".3mf" };
 
-
-        private bool CreateFolders = false;
-        private bool MoveCompressed = false;
         private int FilesModified = 0;
 
 
