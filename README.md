@@ -34,3 +34,9 @@ to add a new category of things would be more involved but could be done through
 3:Add a foreach loop int the UpdateDictionary() function. It should be linked with the ascociated destination.
 
 Thats it
+
+
+The default destinations are:
+
+the Music, Videos, Pictures, Documents folders
+and folders inside the the downloads folder called Compressed, Executables, and 3dModels
