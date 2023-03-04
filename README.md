@@ -1,6 +1,11 @@
 # Downloads-Folder-Auto-Sort
-This program is designed to go through your downloads folder and sort files base on file extensions.
+![DownloadsFileManager_CirFDmDJrJ](https://user-images.githubusercontent.com/115612092/222862879-a53d0b75-5617-4375-80bc-c342bfcc77c6.png)
 
+
+
+
+
+This program is designed to go through your downloads folder and sort files base on file extensions.
 
 It is also cusomizable, meaning to add an extension to be sorted, it is as simple as adding ".example" to one of the the following arrays
 
