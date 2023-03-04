@@ -13,11 +13,11 @@ namespace DownloadsFileManager
 
         private string[] audioExtensions = { ".mp3", ".wav", ".wma", ".aac", ".m4a", ".flac", ".ogg", ".opus", ".alac", ".aiff", ".dsd", ".dsf", ".dff" };
 
-        private string[] videoExtensions = { ".mp4", ".mov", ".avi", ".wmv", ".mkv", ".flv", ".webm", ".m4v", ".mpeg", ".mpg", ".3gp", ".3g2", ".ogg", ".ogv", ".qt", ".rm", ".rmvb", ".vob", ".asf", ".divx", ".swf" };
+        private string[] videoExtensions = { ".mp4", ".mov", ".avi", ".wmv", ".mkv", ".flv", ".webm", ".m4v", ".mpeg", ".mpg", ".3gp", ".3g2", ".ogv", ".qt", ".rm", ".rmvb", ".vob", ".asf", ".divx", ".swf" };
 
         private string[] imageExtensions = { ".jpg", ".jpeg", ".png", ".bmp", ".gif", ".tiff", ".svg", ".webp", ".ico", ".jfif", ".pjpeg", ".pjp" };
 
-        private string[] documentExtensions = { ".doc", ".docx", ".ppt", ".pptx", ".xls", ".xlsx", ".pdf", ".rtf", ".txt", ".csv", ".txt" };
+        private string[] documentExtensions = { ".doc", ".docx", ".ppt", ".pptx", ".xls", ".xlsx", ".pdf", ".rtf", ".txt", ".csv"};
 
         private string[] compressedExtensions = { ".zip", ".rar", ".7z", ".gz", ".tar", ".bz2", ".xz", ".z", ".tgz", ".tbz2", ".txz", ".tlz", ".lzma", ".cab", ".iso", ".dmg" };
 
@@ -58,50 +58,45 @@ namespace DownloadsFileManager
             // Audio extensions
             foreach (string str in audioExtensions)
             {
-                if (!extensionToDestination.ContainsKey(str)) 
-                    extensionToDestination.Add(str, musicDestination);
+ 
+                extensionToDestination.Add(str, musicDestination);
             }
 
             // Video extensions
             foreach (string str in videoExtensions)
             {
-                if (!extensionToDestination.ContainsKey(str)) 
-                    extensionToDestination.Add(str, videosDestination);
+
+                extensionToDestination.Add(str, videosDestination);
             }
 
             // Image extensions
             foreach (string str in imageExtensions)
             {
-                if (!extensionToDestination.ContainsKey(str))
-                    extensionToDestination.Add(str, imageDestination);
+                extensionToDestination.Add(str, imageDestination);
             }
 
             // Document extensions
             foreach (string str in documentExtensions)
             {
-                if (!extensionToDestination.ContainsKey(str))
-                    extensionToDestination.Add(str, documentsDestination);
+                extensionToDestination.Add(str, documentsDestination);
             }
 
             // Compressed extensions
             foreach (string str in compressedExtensions)
             {
-                if (!extensionToDestination.ContainsKey(str))
-                    extensionToDestination.Add(str, compressedDestination);
+                extensionToDestination.Add(str, compressedDestination);
             }
 
             // Executable extensions
             foreach (string str in executableExtensions)
             {
-                if (!extensionToDestination.ContainsKey(str))
-                    extensionToDestination.Add(str, executableDestination);
+                extensionToDestination.Add(str, executableDestination);
             }
 
             // 3D model extensions
             foreach (string str in modelExtensions)
             {
-                if (!extensionToDestination.ContainsKey(str))
-                    extensionToDestination.Add(str, modelDestination);
+                extensionToDestination.Add(str, modelDestination);
             }
         }
 
