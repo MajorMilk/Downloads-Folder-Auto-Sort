@@ -91,8 +91,8 @@
             // CustomPathLayoutPanel
             // 
             this.CustomPathLayoutPanel.ColumnCount = 2;
-            this.CustomPathLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.79755F));
-            this.CustomPathLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.20245F));
+            this.CustomPathLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.35484F));
+            this.CustomPathLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.64516F));
             this.CustomPathLayoutPanel.Controls.Add(this.CustomMusicPathBox, 1, 0);
             this.CustomPathLayoutPanel.Controls.Add(this.CustomVideoPathBox, 1, 1);
             this.CustomPathLayoutPanel.Controls.Add(this.CustomImagePathBox, 1, 2);
@@ -122,51 +122,51 @@
             // 
             // CustomMusicPathBox
             // 
-            this.CustomMusicPathBox.Location = new System.Drawing.Point(162, 3);
+            this.CustomMusicPathBox.Location = new System.Drawing.Point(177, 3);
             this.CustomMusicPathBox.Name = "CustomMusicPathBox";
-            this.CustomMusicPathBox.Size = new System.Drawing.Size(734, 20);
+            this.CustomMusicPathBox.Size = new System.Drawing.Size(719, 20);
             this.CustomMusicPathBox.TabIndex = 7;
             // 
             // CustomVideoPathBox
             // 
-            this.CustomVideoPathBox.Location = new System.Drawing.Point(162, 40);
+            this.CustomVideoPathBox.Location = new System.Drawing.Point(177, 40);
             this.CustomVideoPathBox.Name = "CustomVideoPathBox";
-            this.CustomVideoPathBox.Size = new System.Drawing.Size(734, 20);
+            this.CustomVideoPathBox.Size = new System.Drawing.Size(719, 20);
             this.CustomVideoPathBox.TabIndex = 8;
             // 
             // CustomImagePathBox
             // 
-            this.CustomImagePathBox.Location = new System.Drawing.Point(162, 77);
+            this.CustomImagePathBox.Location = new System.Drawing.Point(177, 77);
             this.CustomImagePathBox.Name = "CustomImagePathBox";
-            this.CustomImagePathBox.Size = new System.Drawing.Size(734, 20);
+            this.CustomImagePathBox.Size = new System.Drawing.Size(719, 20);
             this.CustomImagePathBox.TabIndex = 9;
             // 
             // CustomDocPathBox
             // 
-            this.CustomDocPathBox.Location = new System.Drawing.Point(162, 114);
+            this.CustomDocPathBox.Location = new System.Drawing.Point(177, 114);
             this.CustomDocPathBox.Name = "CustomDocPathBox";
-            this.CustomDocPathBox.Size = new System.Drawing.Size(734, 20);
+            this.CustomDocPathBox.Size = new System.Drawing.Size(719, 20);
             this.CustomDocPathBox.TabIndex = 10;
             // 
             // CustomCompPathBox
             // 
-            this.CustomCompPathBox.Location = new System.Drawing.Point(162, 151);
+            this.CustomCompPathBox.Location = new System.Drawing.Point(177, 151);
             this.CustomCompPathBox.Name = "CustomCompPathBox";
-            this.CustomCompPathBox.Size = new System.Drawing.Size(734, 20);
+            this.CustomCompPathBox.Size = new System.Drawing.Size(719, 20);
             this.CustomCompPathBox.TabIndex = 11;
             // 
             // CustomExePathBox
             // 
-            this.CustomExePathBox.Location = new System.Drawing.Point(162, 188);
+            this.CustomExePathBox.Location = new System.Drawing.Point(177, 188);
             this.CustomExePathBox.Name = "CustomExePathBox";
-            this.CustomExePathBox.Size = new System.Drawing.Size(734, 20);
+            this.CustomExePathBox.Size = new System.Drawing.Size(719, 20);
             this.CustomExePathBox.TabIndex = 12;
             // 
             // CustomModelPathBox
             // 
-            this.CustomModelPathBox.Location = new System.Drawing.Point(162, 225);
+            this.CustomModelPathBox.Location = new System.Drawing.Point(177, 225);
             this.CustomModelPathBox.Name = "CustomModelPathBox";
-            this.CustomModelPathBox.Size = new System.Drawing.Size(734, 20);
+            this.CustomModelPathBox.Size = new System.Drawing.Size(719, 20);
             this.CustomModelPathBox.TabIndex = 13;
             // 
             // CustomMusicPathCheckBox
@@ -214,9 +214,9 @@
             this.CustomCompressedPathCheckbox.AutoSize = true;
             this.CustomCompressedPathCheckbox.Location = new System.Drawing.Point(3, 151);
             this.CustomCompressedPathCheckbox.Name = "CustomCompressedPathCheckbox";
-            this.CustomCompressedPathCheckbox.Size = new System.Drawing.Size(153, 17);
+            this.CustomCompressedPathCheckbox.Size = new System.Drawing.Size(147, 17);
             this.CustomCompressedPathCheckbox.TabIndex = 18;
-            this.CustomCompressedPathCheckbox.Text = "Custom Compressed File Path";
+            this.CustomCompressedPathCheckbox.Text = "Custom Compressed Path";
             this.CustomCompressedPathCheckbox.UseVisualStyleBackColor = true;
             // 
             // CustomExePathCheckbox
