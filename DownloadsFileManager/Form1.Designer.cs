@@ -47,6 +47,8 @@
             this.CustomCompressedPathCheckbox = new System.Windows.Forms.CheckBox();
             this.CustomExePathCheckbox = new System.Windows.Forms.CheckBox();
             this.CustomModelPathCheckbox = new System.Windows.Forms.CheckBox();
+            this.DownloadsCheckBox = new System.Windows.Forms.CheckBox();
+            this.CustomDownloadsPathBox = new System.Windows.Forms.TextBox();
             this.CustomPathLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,7 +82,7 @@
             // 
             // MainButton
             // 
-            this.MainButton.Location = new System.Drawing.Point(12, 279);
+            this.MainButton.Location = new System.Drawing.Point(12, 347);
             this.MainButton.Name = "MainButton";
             this.MainButton.Size = new System.Drawing.Size(217, 80);
             this.MainButton.TabIndex = 5;
@@ -239,11 +241,30 @@
             this.CustomModelPathCheckbox.Text = "Custom Model Path";
             this.CustomModelPathCheckbox.UseVisualStyleBackColor = true;
             // 
+            // DownloadsCheckBox
+            // 
+            this.DownloadsCheckBox.AutoSize = true;
+            this.DownloadsCheckBox.Location = new System.Drawing.Point(15, 324);
+            this.DownloadsCheckBox.Name = "DownloadsCheckBox";
+            this.DownloadsCheckBox.Size = new System.Drawing.Size(155, 17);
+            this.DownloadsCheckBox.TabIndex = 7;
+            this.DownloadsCheckBox.Text = "Custom Downloads Folder?";
+            this.DownloadsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // CustomDownloadsPathBox
+            // 
+            this.CustomDownloadsPathBox.Location = new System.Drawing.Point(177, 324);
+            this.CustomDownloadsPathBox.Name = "CustomDownloadsPathBox";
+            this.CustomDownloadsPathBox.Size = new System.Drawing.Size(731, 20);
+            this.CustomDownloadsPathBox.TabIndex = 8;
+            // 
             // DownloadsAutoSort
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 861);
+            this.Controls.Add(this.CustomDownloadsPathBox);
+            this.Controls.Add(this.DownloadsCheckBox);
             this.Controls.Add(this.CustomPathLayoutPanel);
             this.Controls.Add(this.MainButton);
             this.Controls.Add(this.label1);
@@ -282,6 +303,8 @@
         private System.Windows.Forms.CheckBox CustomCompressedPathCheckbox;
         private System.Windows.Forms.CheckBox CustomExePathCheckbox;
         private System.Windows.Forms.CheckBox CustomModelPathCheckbox;
+        private System.Windows.Forms.CheckBox DownloadsCheckBox;
+        private System.Windows.Forms.TextBox CustomDownloadsPathBox;
     }
 }
 

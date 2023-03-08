@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Security.AccessControl;
-using System.Security.Principal;
 using System.Windows.Forms;
 
 namespace DownloadsFileManager
@@ -55,48 +53,27 @@ namespace DownloadsFileManager
         {
             extensionToDestination = new Dictionary<string, string>();
 
-            // Audio extensions
-            foreach (string str in audioExtensions)
-            {
- 
-                extensionToDestination.Add(str, musicDestination);
-            }
 
-            // Video extensions
-            foreach (string str in videoExtensions)
-            {
+            AddToDictionary(audioExtensions, musicDestination);
+            AddToDictionary(videoExtensions, videosDestination);
+            AddToDictionary(imageExtensions, imageDestination);
+            AddToDictionary(documentExtensions, documentsDestination);
+            AddToDictionary(compressedExtensions, compressedDestination);
+            AddToDictionary(executableExtensions, executableDestination);
+            AddToDictionary(modelExtensions, modelDestination);
+        }
 
-                extensionToDestination.Add(str, videosDestination);
-            }
-
-            // Image extensions
-            foreach (string str in imageExtensions)
+        private void AddToDictionary(string[] ext, string dest)
+        {
+            foreach(string str in ext)
             {
-                extensionToDestination.Add(str, imageDestination);
-            }
-
-            // Document extensions
-            foreach (string str in documentExtensions)
-            {
-                extensionToDestination.Add(str, documentsDestination);
-            }
-
-            // Compressed extensions
-            foreach (string str in compressedExtensions)
-            {
-                extensionToDestination.Add(str, compressedDestination);
-            }
-
-            // Executable extensions
-            foreach (string str in executableExtensions)
-            {
-                extensionToDestination.Add(str, executableDestination);
-            }
-
-            // 3D model extensions
-            foreach (string str in modelExtensions)
-            {
-                extensionToDestination.Add(str, modelDestination);
+                try
+                {
+                    extensionToDestination.Add(str, dest);
+                } catch(Exception)
+                {
+                    continue;
+                }
             }
         }
 
@@ -116,13 +93,9 @@ namespace DownloadsFileManager
         }
 
 
-
-        /// <summary>
-        /// Returns true if you are able to write a file to the specified destination.
-        /// </summary>
-        /// <param name="directoryPath"></param>
-        /// <returns></returns>
-        private bool IsDirectoryWritable(string directoryPath, bool CreateFolderMode)
+        //Seemingly useless function
+        
+       /* private bool IsDirectoryWritable(string directoryPath, bool CreateFolderMode)
         {
             if(CreateFolderMode)
             {
@@ -131,6 +104,7 @@ namespace DownloadsFileManager
                     Directory.CreateDirectory(directoryPath);
                 }
             }
+            return true;
             try
             {
                 // Get the security information for the directory
@@ -155,26 +129,15 @@ namespace DownloadsFileManager
                         }
                     }
                 }
-
+                WriteMessage($"Directory is not writable: {directoryPath}");
                 return false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                WriteMessage($"Exception occurred while checking directory access: {ex.Message}");
                 return false;
             }
-        }
-
-
-        /// <summary>
-        /// Makes sure you have the proper permission to modify the downloads and other folders
-        /// </summary>
-        /// <returns></returns>
-        private bool CheckFolders()
-        {
-            //If you can access these folders, I'm assuming you could access the others.
-            if (IsDirectoryWritable(downloadsPath, false) &  IsDirectoryWritable(videosPath, false) & IsDirectoryWritable(musicPath, false) & IsDirectoryWritable(documentsPath, false)) return true; 
-            else return false;
-        }
+        }*/
 
 
         /// <summary>
@@ -191,10 +154,16 @@ namespace DownloadsFileManager
             {
                 Directory.CreateDirectory(DestinationFolderPath);
             }
+
+            try
+            {
+                string destinationFilePath = Path.Combine(DestinationFolderPath, Path.GetFileName(FilePath));
+                File.Move(FilePath, destinationFilePath);
+            }
+            catch(Exception) { WriteMessage("Failed to move file"); return false; }
             FilesModified++;
             UpdateFileModified();
-            string destinationFilePath = Path.Combine(DestinationFolderPath, Path.GetFileName(FilePath));
-            File.Move(FilePath, destinationFilePath);
+            
             return true;
 
         }
@@ -206,9 +175,6 @@ namespace DownloadsFileManager
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (!CheckFolders()) WriteMessage("ERROR: Insufficent permissions");
-            else WriteMessage("READY");
-
             SetDestinations();
             UpdateDictionary();
         }
@@ -274,50 +240,6 @@ namespace DownloadsFileManager
             }
         }
 
-        /// <summary>
-        /// Checks Destination Folders to make sure theyre all writable
-        /// </summary>
-        /// <returns></returns>
-        private bool CheckDestinations()
-        {
-            if (!IsDirectoryWritable(musicDestination, true))
-            {
-                MessageBox.Show("Music destination is not writable.");
-                return false;
-            }
-            if (!IsDirectoryWritable(videosDestination, true))
-            {
-                MessageBox.Show("Videos destination is not writable.");
-                return false;
-            }
-            if (!IsDirectoryWritable(imageDestination, true))
-            {
-                MessageBox.Show("Images destination is not writable.");
-                return false;
-            }
-            if (!IsDirectoryWritable(documentsDestination, true))
-            {
-                MessageBox.Show("Documents destination is not writable.");
-                return false;
-            }
-            if (!IsDirectoryWritable(compressedDestination, true))
-            {
-                MessageBox.Show("Compressed destination is not writable.");
-                return false;
-            }
-            if (!IsDirectoryWritable(executableDestination, true))
-            {
-                MessageBox.Show("Executable destination is not writable.");
-                return false;
-            }
-            if (!IsDirectoryWritable(modelDestination, true))
-            {
-                MessageBox.Show("Model destination is not writable.");
-                return false;
-            }
-
-            return true;
-        }
 
 
 
@@ -330,10 +252,14 @@ namespace DownloadsFileManager
         /// <param name="e"></param>
         private void MainButton_Click(object sender, EventArgs e)
         {
+
+            if (DownloadsCheckBox.Checked)
+            {
+                downloadsPath = CustomDownloadsPathBox.Text;
+            }
+
             SetDestinations();
             UpdateCustomPaths();
-
-            if (!CheckDestinations()) { WriteMessage("CUSTOM PATH ERROR"); return; }
             UpdateDictionary();
 
             string[] files = Directory.GetFiles(downloadsPath, "*");
